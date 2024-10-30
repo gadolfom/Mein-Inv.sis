@@ -1,10 +1,6 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
     text-align: center;
 }
 
@@ -12,91 +8,31 @@ header {
     background-color: #4CAF50;
     color: white;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin: 0;
-}
-
-section {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 600px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-h2 {
-    color: #4CAF50;
-    font-size: 1.8em;
-    margin-top: 0;
-}
-
-form, #inventory-summary {
+nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin: 20px;
 }
 
-input, button {
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 100%;
-    max-width: 400px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-button {
+nav button {
     background-color: #4CAF50;
     color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #388e3c;
-}
-
-#product-list {
-    list-style: none;
-    padding: 0;
-}
-
-.product-item {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.delete-btn, .edit-btn {
-    background-color: #e74c3c;
-    color: white;
-    padding: 5px 10px;
     border: none;
-    border-radius: 5px;
+    margin: 0 5px;
     cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
 }
 
-.delete-btn:hover, .edit-btn:hover {
-    background-color: #c0392b;
+.section {
+    display: none;
 }
 
-#search-bar {
-    margin-bottom: 20px;
-    padding: 10px;
-    width: 100%;
-    max-width: 400px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.section.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
