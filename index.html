@@ -3,35 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Inventario</title>
+    <title>Sistema de Inventario Completo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Sistema de Inventario</h1>
-        <p>Administra tus productos de forma sencilla.</p>
+        <h1>Sistema de Inventario Completo</h1>
+        <p>Administra tus productos, ventas, compras y clientes.</p>
     </header>
 
-    <section id="add-product">
-        <h2>Agregar Producto</h2>
+    <!-- Navegación entre secciones -->
+    <nav>
+        <button onclick="showSection('inventory')">Inventario</button>
+        <button onclick="showSection('sales')">Ventas</button>
+        <button onclick="showSection('purchases')">Compras</button>
+        <button onclick="showSection('clients')">Clientes</button>
+        <button onclick="showSection('metrics')">Métricas</button>
+    </nav>
+
+    <!-- Sección de Inventario -->
+    <section id="inventory" class="section">
+        <h2>Inventario</h2>
         <form id="product-form">
             <input type="text" id="product-name" placeholder="Nombre del Producto" required>
             <input type="number" id="product-quantity" placeholder="Cantidad" required>
             <input type="number" id="product-price" placeholder="Precio" required>
             <button type="submit">Agregar al Inventario</button>
         </form>
+        <ul id="product-list"></ul>
     </section>
 
-    <section id="inventory">
-        <h2>Inventario</h2>
-        <input type="text" id="search-bar" placeholder="Buscar producto...">
-        <div id="inventory-summary">
-            <p>Total de Productos: <span id="total-products">0</span></p>
-            <p>Valor Total del Inventario: $<span id="total-value">0.00</span></p>
-        </div>
-        <ul id="product-list">
-            <!-- Los productos se mostrarán aquí -->
-        </ul>
+    <!-- Sección de Ventas -->
+    <section id="sales" class="section hidden">
+        <h2>Ventas</h2>
+        <form id="sales-form">
+            <input type="text" id="sale-product-name" placeholder="Producto Vendido" required>
+            <input type="number" id="sale-quantity" placeholder="Cantidad" required>
+            <select id="payment-method">
+                <option value="efectivo">Efectivo</option>
+                <option value="tarjeta">Tarjeta</option>
+            </select>
+            <select id="currency">
+                <option value="bolivares">Bolívares</option>
+                <option value="dolares">Dólares</option>
+            </select>
+            <button type="submit">Registrar Venta</button>
+        </form>
+        <ul id="sales-list"></ul>
+    </section>
+
+    <!-- Sección de Compras -->
+    <section id="purchases" class="section hidden">
+        <h2>Compras</h2>
+        <form id="purchase-form">
+            <input type="text" id="purchase-product-name" placeholder="Producto Comprado" required>
+            <input type="number" id="purchase-quantity" placeholder="Cantidad" required>
+            <input type="number" id="purchase-price" placeholder="Precio" required>
+            <button type="submit">Registrar Compra</button>
+        </form>
+        <ul id="purchase-list"></ul>
+    </section>
+
+    <!-- Sección de Clientes -->
+    <section id="clients" class="section hidden">
+        <h2>Clientes</h2>
+        <form id="client-form">
+            <input type="text" id="client-name" placeholder="Nombre del Cliente" required>
+            <input type="number" id="client-debt" placeholder="Deuda" required>
+            <button type="submit">Registrar Cliente</button>
+        </form>
+        <ul id="client-list"></ul>
+    </section>
+
+    <!-- Sección de Métricas -->
+    <section id="metrics" class="section hidden">
+        <h2>Métricas</h2>
+        <p>Total Ventas: <span id="total-sales">0</span></p>
+        <p>Total Compras: <span id="total-purchases">0</span></p>
     </section>
 
     <script src="script.js"></script>
